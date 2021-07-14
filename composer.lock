@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7b56a15d46d3bf4d7212e3bd8df819e",
+    "content-hash": "a234437f2b016ae1a2689753c979338e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1881,6 +1881,87 @@
             "time": "2020-10-27T21:46:55+00:00"
         },
         {
+            "name": "drupal/admin_toolbar",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/admin_toolbar.git",
+                "reference": "3.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "e25ca22db1317174a7fba4734c0412293b573f43"
+            },
+            "require": {
+                "drupal/core": "^8.8.0 || ^9.0"
+            },
+            "require-dev": {
+                "drupal/admin_toolbar_tools": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.1",
+                    "datestamp": "1622644077",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wilfrid Roze (eme)",
+                    "homepage": "https://www.drupal.org/u/eme",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Romain Jarraud (romainj)",
+                    "homepage": "https://www.drupal.org/u/romainj",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Adrian Cid Almaguer (adriancid)",
+                    "homepage": "https://www.drupal.org/u/adriancid",
+                    "email": "adriancid@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Mohamed Anis Taktak (matio89)",
+                    "homepage": "https://www.drupal.org/u/matio89",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "fethi.krout",
+                    "homepage": "https://www.drupal.org/user/3206765"
+                },
+                {
+                    "name": "matio89",
+                    "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "romainj",
+                    "homepage": "https://www.drupal.org/user/370706"
+                }
+            ],
+            "description": "Provides a drop-down menu interface to the core Drupal Toolbar.",
+            "homepage": "http://drupal.org/project/admin_toolbar",
+            "keywords": [
+                "Drupal",
+                "Toolbar"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/admin_toolbar",
+                "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+            }
+        },
+        {
             "name": "drupal/blazy",
             "version": "2.4.0",
             "source": {
@@ -1996,16 +2077,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.2.0",
+            "version": "9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "0231ec3b5a195d39ab02680672736de781a59599"
+                "reference": "20eb99aa59a265d22a21a4d6fde70901c3b5a37c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/0231ec3b5a195d39ab02680672736de781a59599",
-                "reference": "0231ec3b5a195d39ab02680672736de781a59599",
+                "url": "https://api.github.com/repos/drupal/core/zipball/20eb99aa59a265d22a21a4d6fde70901c3b5a37c",
+                "reference": "20eb99aa59a265d22a21a4d6fde70901c3b5a37c",
                 "shasum": ""
             },
             "require": {
@@ -2244,13 +2325,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.2.0"
+                "source": "https://github.com/drupal/core/tree/9.2.1"
             },
-            "time": "2021-06-16T12:31:16+00:00"
+            "time": "2021-07-07T13:04:41+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.2.0",
+            "version": "9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -2294,22 +2375,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.2.0"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.2.1"
             },
             "time": "2020-08-07T22:30:13+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.2.0",
+            "version": "9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "436c459d1c9c8966b4d01e239da1b9165e91aa9d"
+                "reference": "f043a94e9a8aa60016974d60648508258a51bf86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/436c459d1c9c8966b4d01e239da1b9165e91aa9d",
-                "reference": "436c459d1c9c8966b4d01e239da1b9165e91aa9d",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/f043a94e9a8aa60016974d60648508258a51bf86",
+                "reference": "f043a94e9a8aa60016974d60648508258a51bf86",
                 "shasum": ""
             },
             "require": {
@@ -2318,7 +2399,7 @@
                 "doctrine/annotations": "1.13.1",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.2",
-                "drupal/core": "9.2.0",
+                "drupal/core": "9.2.1",
                 "egulias/email-validator": "2.1.25",
                 "guzzlehttp/guzzle": "6.5.5",
                 "guzzlehttp/promises": "1.4.1",
@@ -2381,9 +2462,9 @@
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.2.0"
+                "source": "https://github.com/drupal/core-recommended/tree/9.2.1"
             },
-            "time": "2021-06-16T12:31:16+00:00"
+            "time": "2021-07-07T13:04:41+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -8606,7 +8687,7 @@
         },
         {
             "name": "drupal/core-dev",
-            "version": "9.2.0",
+            "version": "9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
@@ -8652,7 +8733,7 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/9.2.0"
+                "source": "https://github.com/drupal/core-dev/tree/9.2.1"
             },
             "time": "2021-06-01T16:41:50+00:00"
         },
@@ -10978,16 +11059,16 @@
         },
         {
             "name": "sirbrillig/phpcs-variable-analysis",
-            "version": "v2.11.1",
+            "version": "v2.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sirbrillig/phpcs-variable-analysis.git",
-                "reference": "9df9ade5961a3505d0d24b0e6be2ab82e335f753"
+                "reference": "3fad28475bfbdbf8aa5c440f8a8f89824983d85e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sirbrillig/phpcs-variable-analysis/zipball/9df9ade5961a3505d0d24b0e6be2ab82e335f753",
-                "reference": "9df9ade5961a3505d0d24b0e6be2ab82e335f753",
+                "url": "https://api.github.com/repos/sirbrillig/phpcs-variable-analysis/zipball/3fad28475bfbdbf8aa5c440f8a8f89824983d85e",
+                "reference": "3fad28475bfbdbf8aa5c440f8a8f89824983d85e",
                 "shasum": ""
             },
             "require": {
@@ -11027,7 +11108,7 @@
                 "source": "https://github.com/sirbrillig/phpcs-variable-analysis",
                 "wiki": "https://github.com/sirbrillig/phpcs-variable-analysis/wiki"
             },
-            "time": "2021-06-18T20:54:59+00:00"
+            "time": "2021-07-06T23:45:17+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

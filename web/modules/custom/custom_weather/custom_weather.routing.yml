@@ -1,0 +1,7 @@
+weather.content:
+  path: '/custom-weather'
+  defaults:
+    _controller: '\Drupal\custom_weather\Controller\WeatherController::content'
+    _title: 'Custom Weather'
+  requirements:
+    _permission: 'access content'
