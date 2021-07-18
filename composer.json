@@ -27,6 +27,7 @@
         "drupal/devel": "^4.1",
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
+        "drupal/restui": "^1.20",
         "drupal/slick": "^2.3",
         "drupal/slick_paragraphs": "^2.1",
         "drupal/token": "^1.9",
