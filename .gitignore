@@ -23,3 +23,6 @@
 
 # Ignore .env files as they are personal
 /.env
+
+# Ignore node_modules by subtheme "b4subtheme"
+/web/themes/custom/b4subtheme/node_modules/

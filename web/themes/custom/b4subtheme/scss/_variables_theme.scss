@@ -18,3 +18,24 @@ $nav-tabs-link-active-bg-sm: #dee2e6 !default;
 
 $local-tasks-primary-margin: 1rem 0 !default;
 $local-tasks-secondary-margin: 0 0 1rem 0 !default;
+
+//.nav-item {
+//  transform: scale(1);
+//  &:hover {
+//    transform: scale(1.1);
+//    color: #0c5460;
+//  }
+//}
+.language-switcher-language-url {
+  & li {
+    transform: scale(1);
+    &:hover {
+      transform: scale(1.1);
+      & a {
+        text-decoration: none;
+        color: #6610f2;
+      }
+    }
+  }
+}
+
