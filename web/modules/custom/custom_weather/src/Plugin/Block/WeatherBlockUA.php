@@ -21,7 +21,7 @@ class WeatherBlockUA extends BlockBase {
   public function build() {
 
     $client = \Drupal::httpClient();
-    $request = $client->get('api.openweathermap.org/data/2.5/weather?id=702569&units=metric&appid=d0c33cd5a7fb741a9d1f0f6db947d48e&lang=ua');
+    $request = $client->get('api.openweathermap.org/data/2.5/weather?q=Lutsk&units=metric&appid=d0c33cd5a7fb741a9d1f0f6db947d48e&lang=ua');
     $response = $request->getBody()->getContents();
     $responseParsed = json_decode($response, true);
 
