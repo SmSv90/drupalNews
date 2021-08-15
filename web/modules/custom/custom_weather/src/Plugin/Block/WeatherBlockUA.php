@@ -28,33 +28,48 @@ class WeatherBlockUA extends BlockBase
         $responseParsed = json_decode($response, true);
 
         $cityName = [
-        '#type' => 'html_tag',
-        '#tag' => 'p',
-        '#value' => 'Локація: ' . $responseParsed['name']
+          '#type' => 'html_tag',
+          '#tag' => 'p',
+          '#value' => 'Локація: ' . $responseParsed['name'],
+          '#attributes' => [
+            'class' => ['weather-block-location'],
+          ]
         ];
 
         $temperatureValue = [
-        '#type' => 'html_tag',
-        '#tag' => 'p',
-        '#value' => 'Температура: ' . round($responseParsed['main']['temp']) . '&#x2103;'
+          '#type' => 'html_tag',
+          '#tag' => 'p',
+          '#value' => 'Температура: ' . round($responseParsed['main']['temp']) . '&#x2103;',
+          '#attributes' => [
+            'class' => ['weather-block-temperature'],
+          ]
         ];
 
         $humidityValue= [
-        '#type' => 'html_tag',
-        '#tag' => 'p',
-        '#value' => 'Вологість: ' . $responseParsed['main']['humidity'] . ' %'
+          '#type' => 'html_tag',
+          '#tag' => 'p',
+          '#value' => 'Вологість: ' . $responseParsed['main']['humidity'] . ' %',
+          '#attributes' => [
+            'class' => ['weather-block-humidity'],
+          ]
         ];
 
         $weatherValue= [
-        '#type' => 'html_tag',
-        '#tag' => 'p',
-        '#value' => 'Погода: ' . $responseParsed['weather'][0]['description']
+          '#type' => 'html_tag',
+          '#tag' => 'p',
+          '#value' => 'Погода: ' . $responseParsed['weather'][0]['description'],
+          '#attributes' => [
+            'class' => ['weather-block-weather'],
+          ]
         ];
 
         $windValue= [
-        '#type' => 'html_tag',
-        '#tag' => 'p',
-        '#value' => 'Вітер: ' . $responseParsed['wind']['speed'] . ' м/с'
+          '#type' => 'html_tag',
+          '#tag' => 'p',
+          '#value' => 'Вітер: ' . $responseParsed['wind']['speed'] . ' м/с',
+          '#attributes' => [
+            'class' => ['weather-block-wind'],
+          ]
         ];
 
         return [

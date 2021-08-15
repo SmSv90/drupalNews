@@ -20,27 +20,82 @@ $local-tasks-primary-margin: 1rem 0 !default;
 $local-tasks-secondary-margin: 0 0 1rem 0 !default;
 
 
-.region-header {
-  font-family: 'Lobster', cursive;
+// Variables
+$navFontColor : #140e44;
+$navBgColor : #c5c5c5;
+$navAlterColor : whitesmoke;
+
+$titleFontType : 'Lobster', cursive;
+$contentLinkFontColor : #140e44;
+$contentLinkHoverColor : whitesmoke;
+
+$sidebarFontColor : #140e44;
+
+
+// Desktop styles
+main {
+  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1),rgba(255,255,255,0.1)),url(../assets/img/main-bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 #navbarSupportedContent {
   display: flex;
-  justify-content: space-between !important;
+  justify-content: space-around !important;
 }
 
 .navbar {
-  background-color: whitesmoke;
+  background-color: $navBgColor;
+  border-bottom: 1vh solid saddlebrown;
 }
 
 .region-nav {
-  color: darkslateblue;
+  color: $navFontColor;
+  &-branding {
+    font-family: $titleFontType;
+    color: $navFontColor;
+    & .navbar-brand {
+      & .site-title {
+        color : $navFontColor !important;
+      }
+    }
+  }
   &-main {
-    & .nav-link {
-      margin-right: 0.1vw;
-      color: darkslateblue;
+    & .nav-item {
+      padding: 0.5vw 1vw;
+      border-right: 2px solid $navAlterColor;
+      &:first-child {
+        border-left: 2px solid $navAlterColor;
+      }
+      & .dropdown-menu {
+        & .nav-item {
+          border: none;
+          padding: 0.5vw;
+          &:hover {
+            background-color: $navBgColor;
+            color: $navAlterColor;
+          }
+        }
+      }
       &:hover {
-        font-weight: bolder;
+        border-bottom: 4px solid $navFontColor  ;
+        padding: 0.5vw 1vw 0.2vw 1vw;
+      }
+    }
+    & .nav-link {
+      color: $navFontColor;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none !important;
+      transition: all 0.8s ease-out;
+      &:hover {
+        border-bottom: none;
+        color: $navAlterColor;
+      }
+      &::after {
+        margin-left: 0.5vw;
       }
     }
   }
@@ -49,17 +104,42 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
       & .links {
         margin: 0.2vw;
         & li {
+          &::before {
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin: 0 6px 0 0;
+          }
+          &.en::before {
+            background: url('../assets/icons/languageSwitcher/united-kingdom.png');
+            background-size: 18px;
+          }
+          &.uk::before {
+            background: url('../assets/icons/languageSwitcher/ukraine.png');
+            background-size: 18px;
+          }
+          &::marker {
+            content: "";
+          }
           & a {
-            color: darkslateblue;
-            text-decoration: none;
+            color: $navFontColor;
+            text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+            transition: text-decoration-color 300ms;
+            &:hover {
+              color: $navAlterColor;
+              text-decoration-color: rgba(245, 245, 245, 1);
+            }
           }
           &:hover {
             transform: scale(1.1);
           }
-          }
+        }
         & .is-active a {
-          color: darkblue;
-          font-weight: bolder;
+          text-decoration-color: rgb(75, 60, 140);
+          color: saddlebrown;
+          font-weight: bold;
         }
       }
     }
@@ -67,7 +147,8 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
 }
 
 .region-sidebar {
-  &-first {
+   &-first {
+    color: $sidebarFontColor;
     margin-top: 8vh;
     & label {
       font-weight: bold;
@@ -80,7 +161,7 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
       padding-left: 1vw;
     }
     & .search-block-form form {
-      background-color: whitesmoke;
+      background-color: #ececec;
       display: flex;
       justify-content: center;
       padding: 1vw;
@@ -89,19 +170,24 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
       }
     }
     & .form--inline {
-      background-color: whitesmoke;
-      margin-top: 5vh;
-      padding-left: 1vw;
-      & .form-select {
-        width: 15vw;
+    background-color: #ececec;
+    margin-top: 5vh;
+    padding-left: 1vw;
+      & .form-item-field-news-taxonomy-target-id {
+        width: 95%;
+      }
+      & .form-control {
+      width: 100%;
       }
     }
   }
   &-second {
     & .block-custom-weather {
-      margin-top: 15vh;
-      background-color: whitesmoke;
+      color: $sidebarFontColor;
+      margin-top: 5vh;
+      background-color: #ececec;
       padding: 0.2vw;
+      border: 2px solid saddlebrown;
       & h2 {
         text-align: center;
         font-size: 1.2rem;
@@ -110,22 +196,71 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
       }
       & p {
         margin-bottom: 1vh;
+        &::before {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 24px;
+          float: left;
+          margin: 0 6px 0 0;
+        }
+      }
+      & .weather-block-location::before {
+        background: url('../assets/icons/weatherBlock/map.png');
+        background-size: 24px;
+      }
+      & .weather-block-temperature::before {
+        background: url('../assets/icons/weatherBlock/centigrade.png');
+        background-size: 24px;
+      }
+      & .weather-block-weather::before {
+        background: url('../assets/icons/weatherBlock/weather.png');
+        background-size: 24px;
+      }
+      & .weather-block-humidity::before {
+        background: url('../assets/icons/weatherBlock/humidity.png');
+        background-size: 24px;
+      }
+      & .weather-block-wind::before {
+        background: url('../assets/icons/weatherBlock/windsock.png');
+        background-size: 24px;
       }
     }
   }
 }
 
 .region-content {
-  margin-top: 5vh;
+  width: 100%;
+  background: rgba(234, 193, 160, 0.9);
+  margin: 0 auto;
+  & a {
+    color: $contentLinkFontColor;
+    &:hover {
+      color: $contentLinkHoverColor;
+      text-decoration: none;
+    }
+  }
+  & .page-title {
+    padding-top: 5vh;
+    font-family: $titleFontType;
+    padding-bottom: 1vh;
+    border-bottom: 2px solid grey;
+  }
   & .node--view-mode-teaser {
     margin-top: 5vh;
-    padding-bottom: 2vh;
+    padding-bottom: 1vh;
     border-bottom: 2px solid grey;
+    & a {
+      & span:hover {
+        color: $contentLinkHoverColor;
+      }
+    }
     & .field--name-title {
       display: flex;
       justify-content: flex-start;
       font-size: 1.4rem;
       text-transform: none;
+      color: $contentLinkFontColor;
     }
     & .node__content {
       display: flex;
@@ -140,6 +275,7 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
       & .field--name-body {
         width: 66%;
         padding-left: 2vw;
+        text-align: justify;
       }
       & .node__links {
         display: flex;
@@ -168,27 +304,99 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
         padding: 1.5vw;
       }
     }
+    & .field--name-field-news-taxonomy {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 2vh;
+      & .field__item {
+        margin-right: 2vw;
+      }
+    }
+    & .comment-wrapper {
+      border-top: 0.2vh solid grey;
+        & .comment {
+          font-family: 'Roboto', sans-serif;
+          & .comment__meta {
+            display: none !important;
+          }
+          & .content {
+            & h3 {
+              display: none;
+            }
+            & .layout--twocol-section {
+              margin-top: 2vh;
+              background-color: $navBgColor;
+
+              & .layout__region {
+                padding: 1vh 1vw;
+                &--first {
+                  color: $navFontColor;
+                  & .block-field-blockcommentcommentuid {
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                  }
+                  & .block-field-blockcommentcommentcreated {
+                    margin-top: 1vh;
+                  }
+                }
+                &--second {
+                  & .block-field-blockcommentcommentcomment-body {
+                    text-align: justify;
+                  }
+                  & .block-extra-field-blockcommentcommentlinks {
+                    & li {
+                      margin: 1vh;
+                      padding: 1vh;
+                      border: 1px solid $navFontColor;
+                      &:hover {
+                        border: 1px solid $navAlterColor;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
   }
   & .paragraph {
-    margin-top: 5vh;
+    margin-top: 1vh;
     & h2 {
       text-align: center;
       font-size: 1.8rem;
       font-weight: bold;
       text-transform: uppercase;
+      margin-bottom: 0;
     }
     &--type--paragraph-slideshow {
+      margin-top: 2vh;
+      border-bottom: 2px solid grey;
       & .field--name-field-slide {
         &-title {
+          position: relative;
+          bottom: 15vh;
+          width: 90%;
+          background: rgba(234, 193, 160, 0.7);
           font-size: 1.2rem;
           font-weight: bold;
-          padding: 2vh 0 1vh 0;
+          margin: 0 auto;
         }
         &-description {
+          position: relative;
+          bottom: 15vh;
+          width: 90%;
+          background: rgba(234, 193, 160, 0.7);
           text-align: justify;
+          margin: 0 auto;
         }
         &-link {
+          position: relative;
+          bottom: 15vh;
+          width: 90%;
+          background: rgba(234, 193, 160, 0.7);
           text-align: left;
+          margin: 0 auto;
         }
       }
     }
@@ -198,6 +406,17 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
     margin: 0 auto;
   }
 }
+
+footer {
+  padding: 1vh 0 !important;
+  background-color: $navBgColor;
+  border-top: 0.8vh solid saddlebrown;
+  & .region-footer {
+    font-family: $titleFontType;
+  }
+
+}
+
 
 // Mobile
 @media screen and (max-width: 540px) {
@@ -228,6 +447,7 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
         & .field--name-body {
           width: 100%;
           padding-left: 2vw;
+          text-align: justify;
         }
         & .node__links {
           display: flex;
@@ -249,5 +469,4 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
       margin: 0 auto;
     }
   }
-
 }
