@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 main {
-  font-family: 'Roboto', sans-serif;
   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(../assets/img/main-bg.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center; }
+  background-position: center;
+  font-family: 'Roboto', sans-serif; }
 
 #navbarSupportedContent {
   display: flex;
@@ -73,7 +73,7 @@ main {
     .region-nav-additional .language-switcher-language-url .links li:hover {
       transform: scale(1.1); }
     .region-nav-additional .language-switcher-language-url .links .is-active a {
-      text-decoration-color: #4b3c8c;
+      text-decoration-color: #140e44;
       color: saddlebrown;
       font-weight: bold; }
 
@@ -89,14 +89,16 @@ main {
     font-size: 1rem;
     padding-left: 1vw; }
   .region-sidebar-first .search-block-form form {
-    background-color: #ececec;
+    background-color: #e0dddd;
+    border: 1px solid saddlebrown;
     display: flex;
     justify-content: center;
     padding: 1vw; }
     .region-sidebar-first .search-block-form form .form-actions {
       padding-left: 1vw; }
   .region-sidebar-first .form--inline {
-    background-color: #ececec;
+    background-color: #e0dddd;
+    border: 1px solid saddlebrown;
     margin-top: 5vh;
     padding-left: 1vw; }
     .region-sidebar-first .form--inline .form-item-field-news-taxonomy-target-id {
@@ -107,7 +109,7 @@ main {
 .region-sidebar-second .block-custom-weather {
   color: #140e44;
   margin-top: 5vh;
-  background-color: #ececec;
+  background-color: #e0dddd;
   padding: 0.2vw;
   border: 2px solid saddlebrown; }
   .region-sidebar-second .block-custom-weather h2 {
@@ -213,7 +215,7 @@ main {
         display: none; }
       .region-content .node--view-mode-full .comment-wrapper .comment .content .layout--twocol-section {
         margin-top: 2vh;
-        background-color: #c5c5c5; }
+        background-color: #d2d2d2; }
         .region-content .node--view-mode-full .comment-wrapper .comment .content .layout--twocol-section .layout__region {
           padding: 1vh 1vw; }
           .region-content .node--view-mode-full .comment-wrapper .comment .content .layout--twocol-section .layout__region--first {
@@ -275,9 +277,11 @@ footer {
   footer .region-footer {
     font-family: "Lobster", cursive; }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 768px) {
+  .region-nav-main .nav-item:first-child {
+    border-left: none; }
   .region-content h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold; }
   .region-content .node--view-mode-teaser {
     margin-top: 5vh;
@@ -285,10 +289,12 @@ footer {
     border-bottom: 2px solid grey; }
     .region-content .node--view-mode-teaser .field--name-title {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       font-size: 1.4rem;
       text-transform: none; }
     .region-content .node--view-mode-teaser .node__content .field--name-field-news-image {
+      display: flex;
+      justify-content: center;
       width: 100%; }
       .region-content .node--view-mode-teaser .node__content .field--name-field-news-image img {
         margin: 0 auto;
@@ -310,7 +316,36 @@ footer {
         border-right: 2px solid grey; }
   .region-content .node--type-webform {
     width: 100%;
+    margin: 0 auto; }
+  .region-content .paragraph h2 {
+    font-size: 1.4rem; }
+  .region-content .paragraph--type--paragraph-slideshow .field--name-field-slide-title {
+    position: relative;
+    bottom: 15vh;
+    width: 90%;
+    background: rgba(234, 193, 160, 0.7);
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 auto; }
+  .region-content .paragraph--type--paragraph-slideshow .field--name-field-slide-description {
+    display: none; }
+  .region-content .paragraph--type--paragraph-slideshow .field--name-field-slide-link {
+    position: relative;
+    bottom: 15vh;
+    width: 90%;
+    background: rgba(234, 193, 160, 0.7);
+    text-align: left;
     margin: 0 auto; } }
+
+@media screen and (max-width: 480px) {
+  .region-nav-main .nav-item {
+    padding: 0.5vw 1vw 0.2vw 1vw; }
+    .region-nav-main .nav-item .nav-link {
+      font-size: 0.9rem; }
+  .region-nav-additional .language-switcher-language-url .links {
+    margin: 0.2vw 0;
+    padding-left: 0;
+    font-size: 0.8rem; } }
 
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)

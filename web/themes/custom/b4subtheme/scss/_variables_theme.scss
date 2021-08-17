@@ -21,24 +21,35 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
 
 
 // Variables
-$navFontColor : #140e44;
-$navBgColor : #c5c5c5;
-$navAlterColor : whitesmoke;
-
 $titleFontType : 'Lobster', cursive;
-$contentLinkFontColor : #140e44;
-$contentLinkHoverColor : whitesmoke;
+
+$borderMainColor: grey;
+$borderAlterColor: saddlebrown;
+
+$navFontColor : #140e44;
+$navAlterColor: whitesmoke;
+$navBgColor : #c5c5c5;
+
+$contentFontColor: #140e44;
+$contentAlterColor: whitesmoke;
+$paragraphBgColor: rgba(234, 193, 160, 0.7);
+$commentBgColor: #d2d2d2;
 
 $sidebarFontColor : #140e44;
+$sidebarAlterColor: whitesmoke;
+$sidebarBgColor: #e0dddd;
 
+$footerFontColor : #140e44;
+$footerAlterColor: whitesmoke;
+$footerBgColor: #c5c5c5;
 
-// Desktop styles
+// Desktop
 main {
-  font-family: 'Roboto', sans-serif;
   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1),rgba(255,255,255,0.1)),url(../assets/img/main-bg.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 #navbarSupportedContent {
@@ -48,7 +59,7 @@ main {
 
 .navbar {
   background-color: $navBgColor;
-  border-bottom: 1vh solid saddlebrown;
+  border-bottom: 1vh solid $borderAlterColor;
 }
 
 .region-nav {
@@ -80,7 +91,7 @@ main {
         }
       }
       &:hover {
-        border-bottom: 4px solid $navFontColor  ;
+        border-bottom: 4px solid $navFontColor;
         padding: 0.5vw 1vw 0.2vw 1vw;
       }
     }
@@ -137,8 +148,8 @@ main {
           }
         }
         & .is-active a {
-          text-decoration-color: rgb(75, 60, 140);
-          color: saddlebrown;
+          text-decoration-color: rgb(20, 14, 68);
+          color: $borderAlterColor;
           font-weight: bold;
         }
       }
@@ -161,7 +172,8 @@ main {
       padding-left: 1vw;
     }
     & .search-block-form form {
-      background-color: #ececec;
+      background-color: $sidebarBgColor;
+      border: 1px solid $borderAlterColor;
       display: flex;
       justify-content: center;
       padding: 1vw;
@@ -170,7 +182,8 @@ main {
       }
     }
     & .form--inline {
-    background-color: #ececec;
+    background-color: $sidebarBgColor;
+    border: 1px solid $borderAlterColor;
     margin-top: 5vh;
     padding-left: 1vw;
       & .form-item-field-news-taxonomy-target-id {
@@ -185,9 +198,9 @@ main {
     & .block-custom-weather {
       color: $sidebarFontColor;
       margin-top: 5vh;
-      background-color: #ececec;
+      background-color: $sidebarBgColor;
       padding: 0.2vw;
-      border: 2px solid saddlebrown;
+      border: 2px solid $borderAlterColor;
       & h2 {
         text-align: center;
         font-size: 1.2rem;
@@ -234,9 +247,9 @@ main {
   background: rgba(234, 193, 160, 0.9);
   margin: 0 auto;
   & a {
-    color: $contentLinkFontColor;
+    color: $contentFontColor;
     &:hover {
-      color: $contentLinkHoverColor;
+      color: $contentAlterColor;
       text-decoration: none;
     }
   }
@@ -244,15 +257,15 @@ main {
     padding-top: 5vh;
     font-family: $titleFontType;
     padding-bottom: 1vh;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid $borderMainColor;
   }
   & .node--view-mode-teaser {
     margin-top: 5vh;
     padding-bottom: 1vh;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid $borderMainColor;
     & a {
       & span:hover {
-        color: $contentLinkHoverColor;
+        color: $contentAlterColor;
       }
     }
     & .field--name-title {
@@ -260,7 +273,7 @@ main {
       justify-content: flex-start;
       font-size: 1.4rem;
       text-transform: none;
-      color: $contentLinkFontColor;
+      color: $contentFontColor;
     }
     & .node__content {
       display: flex;
@@ -287,7 +300,7 @@ main {
         & .field__item {
           margin-right: 0.5vw;
           padding-right: 0.2vw;
-          border-right: 2px solid grey;
+          border-right: 2px solid $borderMainColor;
         }
       }
     }
@@ -313,7 +326,7 @@ main {
       }
     }
     & .comment-wrapper {
-      border-top: 0.2vh solid grey;
+      border-top: 0.2vh solid $borderMainColor;
         & .comment {
           font-family: 'Roboto', sans-serif;
           & .comment__meta {
@@ -325,12 +338,12 @@ main {
             }
             & .layout--twocol-section {
               margin-top: 2vh;
-              background-color: $navBgColor;
+              background-color: $commentBgColor;
 
               & .layout__region {
                 padding: 1vh 1vw;
                 &--first {
-                  color: $navFontColor;
+                  color: $contentFontColor;
                   & .block-field-blockcommentcommentuid {
                     font-weight: bold;
                     font-size: 1.2rem;
@@ -347,9 +360,9 @@ main {
                     & li {
                       margin: 1vh;
                       padding: 1vh;
-                      border: 1px solid $navFontColor;
+                      border: 1px solid $contentFontColor;
                       &:hover {
-                        border: 1px solid $navAlterColor;
+                        border: 1px solid $contentAlterColor;
                       }
                     }
                   }
@@ -371,13 +384,13 @@ main {
     }
     &--type--paragraph-slideshow {
       margin-top: 2vh;
-      border-bottom: 2px solid grey;
+      border-bottom: 2px solid $borderMainColor;
       & .field--name-field-slide {
         &-title {
           position: relative;
           bottom: 15vh;
           width: 90%;
-          background: rgba(234, 193, 160, 0.7);
+          background: $paragraphBgColor;
           font-size: 1.2rem;
           font-weight: bold;
           margin: 0 auto;
@@ -386,7 +399,7 @@ main {
           position: relative;
           bottom: 15vh;
           width: 90%;
-          background: rgba(234, 193, 160, 0.7);
+          background: $paragraphBgColor;
           text-align: justify;
           margin: 0 auto;
         }
@@ -394,7 +407,7 @@ main {
           position: relative;
           bottom: 15vh;
           width: 90%;
-          background: rgba(234, 193, 160, 0.7);
+          background: $paragraphBgColor;
           text-align: left;
           margin: 0 auto;
         }
@@ -409,34 +422,43 @@ main {
 
 footer {
   padding: 1vh 0 !important;
-  background-color: $navBgColor;
-  border-top: 0.8vh solid saddlebrown;
+  background-color: $footerBgColor;
+  border-top: 0.8vh solid $borderAlterColor;
   & .region-footer {
     font-family: $titleFontType;
   }
-
 }
 
-
-// Mobile
-@media screen and (max-width: 540px) {
+// Tablets
+@media screen and (max-width: 768px) {
+  .region-nav {
+    &-main {
+      & .nav-item {
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
   .region-content {
     & h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: bold;
     }
     & .node--view-mode-teaser {
       margin-top: 5vh;
       padding-bottom: 2vh;
-      border-bottom: 2px solid grey;
+      border-bottom: 2px solid $borderMainColor;
       & .field--name-title {
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         font-size: 1.4rem;
         text-transform: none;
       }
       & .node__content {
         & .field--name-field-news-image {
+          display: flex;
+          justify-content: center;
           width: 100%;
           & img {
             margin: 0 auto;
@@ -459,7 +481,7 @@ footer {
           & .field__item {
             margin-right: 0.5vw;
             padding-right: 0.5vw;
-            border-right: 2px solid grey;
+            border-right: 2px solid $borderMainColor;
           }
         }
       }
@@ -467,6 +489,60 @@ footer {
     & .node--type-webform {
       width: 100%;
       margin: 0 auto;
+    }
+    & .paragraph {
+      & h2 {
+        font-size: 1.4rem;
+      }
+      &--type--paragraph-slideshow {
+        & .field--name-field-slide {
+          &-title {
+            position: relative;
+            bottom: 15vh;
+            width: 90%;
+            background: $paragraphBgColor;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0 auto;
+          }
+
+          &-description {
+            display: none;
+          }
+
+          &-link {
+            position: relative;
+            bottom: 15vh;
+            width: 90%;
+            background: $paragraphBgColor;
+            text-align: left;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile devices
+@media screen and (max-width: 480px) {
+  .region-nav {
+    &-main {
+      & .nav-item {
+        padding: 0.5vw 1vw 0.2vw 1vw;
+        & .nav-link {
+          font-size: 0.9rem;
+        }
+      }
+    }
+    &-additional {
+      & .language-switcher-language-url {
+        & .links {
+          margin: 0.2vw 0;
+          padding-left: 0;
+          font-size: 0.8rem;
+        }
+      }
     }
   }
 }
